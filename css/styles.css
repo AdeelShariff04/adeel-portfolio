@@ -3539,8 +3539,8 @@ ANIMATION AREA CSS
 .user-bar {
   position: fixed;
   left: 41px;
-  top: 40%;
-  transform: translateY(-40%);
+  top: 50%;
+  transform: translateY(-50%);
   max-width: 370px;
   padding: 28px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -3548,7 +3548,6 @@ ANIMATION AREA CSS
   overflow: hidden;
   background: var(--Bg-linear-2);
   z-index: 99;
-  max-height: 90vh;
 }
 @media (max-width: 1440px) {
   .user-bar {
