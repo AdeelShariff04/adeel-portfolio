@@ -1,0 +1,83 @@
+@use "../abstracts/index" as *;
+
+.tab-slide {
+    max-width: 335px;
+    padding: 4px;
+    background: var(--Bg-linear-2);
+    border-radius: 52px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+.menu-tab {
+    position: relative;
+    li {
+        .tab-link {
+            padding: 12px 27px;
+            border-radius: 44px;
+            border: 1px solid transparent;
+            @include transition3();
+            color: var(--Text-muted);
+            font-weight: 600;
+        }
+        &.active {
+            .tab-link {
+                color: var(--Text-light);
+            }
+        }
+    }
+    .item-slide-effect {
+        border: 1px solid #ffffff1a;
+        background: linear-gradient(
+            123.51deg,
+            rgba(215, 237, 237, 0.1) -61.8%,
+            rgba(204, 235, 235, 0.01) 100%
+        );
+        position: absolute;
+        height: 100%;
+        border-radius: 44px;
+        -webkit-transition: all 0.5s;
+        -ms-transition: all 0.5s;
+        transition: all 0.5s;
+        left: 0%;
+    }
+    .nav-tab-item {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+.flat-animate-tab {
+    .tab-content {
+        position: relative;
+    }
+    .tab-pane {
+        display: block;
+        pointer-events: none;
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        right: 0;
+        -webkit-transform: translateY(30px);
+        -ms-transform: translateY(30px);
+        transform: translateY(30px);
+        transition-timing-function: ease-in;
+        transition-duration: 0.2s;
+        &.active {
+            pointer-events: auto;
+            opacity: 1;
+            visibility: visible;
+            position: relative;
+            z-index: 2;
+            -webkit-transform: none;
+            -ms-transform: none;
+            transform: none;
+            transition-timing-function: ease-out;
+            transition-duration: 0.3s;
+            transition-delay: 0.3s;
+        }
+    }
+}

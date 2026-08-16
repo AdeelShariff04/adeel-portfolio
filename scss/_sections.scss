@@ -1,0 +1,238 @@
+@use "./abstracts/index" as *;
+
+.main-content {
+    @include res(xl, min) {
+        padding-top: 70px;
+    }
+    @include res(xxl, min) {
+        padding-top: 50px;
+        margin-right: 77px;
+    }
+    @include res(md) {
+        padding-top: 130px;
+    }
+    &.style-fullwidth {
+        padding-top: 233.38px;
+        @include res(md, min) {
+            margin-right: 0;
+        }
+        @include res(xl) {
+            padding-top: 133px;
+        }
+
+        .right-bar {
+            top: 150px;
+        }
+
+        .user-bar {
+            position: sticky;
+            top: 143px;
+            transform: unset;
+        }
+    }
+    &.style-3 {
+        padding-top: 50px;
+        @include res(xxl) {
+            padding-top: 30px;
+        }
+        @include res(sm) {
+            padding-top: 0;
+        }
+        .user-bar {
+        }
+    }
+}
+
+.wrap-main-content {
+    @include res(xl) {
+        padding-top: 40px;
+    }
+    @include res(md) {
+        padding-top: 130px;
+    }
+}
+
+.heading-section {
+    @include res(md) {
+        margin-bottom: 24px;
+        .tag-heading {
+            margin-bottom: 12px;
+        }
+    }
+}
+
+.main-content-2 {
+    padding-top: 100px;
+    @include res(xxl, min) {
+        margin-right: 35px;
+    }
+}
+
+.title-border-shape {
+    position: relative;
+    max-width: max-content;
+    padding: 8px;
+    .shape {
+        span {
+            position: absolute;
+            display: block;
+            height: 12px;
+            width: 12px;
+            background-color: var(--White);
+            border: 2px solid var(--Primary);
+            z-index: 1;
+        }
+        .shape-1 {
+            left: -7px;
+            top: -7px;
+        }
+        .shape-2 {
+            right: -4px;
+            top: -7px;
+        }
+        .shape-3 {
+            right: -5px;
+            bottom: -5px;
+        }
+        .shape-4 {
+            left: -7px;
+            bottom: -7px;
+        }
+    }
+
+    .line-horizontal {
+        background-color: var(--Primary);
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        left: 0;
+    }
+    .line-vertical {
+        background-color: var(--Primary);
+        width: 1px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+    }
+    .vertical-1 {
+        right: 0;
+    }
+    .vertical-2 {
+        left: 0;
+    }
+    .horizontal-1 {
+        top: 0;
+    }
+    .horizontal-2 {
+        bottom: 0;
+    }
+}
+
+.section-testimonial {
+    .swiper-slide {
+        height: auto !important;
+    }
+    .wrap-sw-button {
+        position: absolute;
+        z-index: 2;
+        right: 40px;
+        bottom: 40px;
+    }
+    &.style-1 {
+        .wrap-sw-button {
+            position: unset;
+        }
+    }
+}
+
+.section-portfolio {
+    .portfolio-item {
+        &:not(:last-child) {
+            margin-bottom: 44px;
+        }
+        @include res(md) {
+            &:not(:last-child) {
+                margin-bottom: 30px;
+            }
+        }
+    }
+    &.style-1 {
+        .portfolio-item {
+            margin-bottom: 0;
+        }
+        .tf-grid-layout {
+            gap: 44px;
+        }
+    }
+}
+
+.section-partner {
+    @include res(lg, min) {
+        .swiper-slide {
+            position: unset;
+        }
+    }
+    &.style-1 {
+        padding-top: 22px;
+        @include res(lg, min) {
+            .heading-section {
+                padding-top: 71px;
+            }
+        }
+    }
+}
+
+.section-about,
+.section-resume {
+    &.style-1 {
+        @include res(xxl, min) {
+            margin-left: 80px;
+        }
+    }
+}
+
+.section-about {
+    @include res(xl, min) {
+        height: 73vh;
+    }
+    &.v2 {
+        @include res(xl, min) {
+            height: 86vh;
+            padding-top: 0;
+        }
+        @include res(xxl, min) {
+            height: 100vh;
+            padding-top: 50px;
+        }
+        @include res(xxl) {
+            display: flex;
+            align-items: center;
+        }
+    }
+    &.v3 {
+        height: unset;
+    }
+}
+
+.section-contact {
+    &.style-1 {
+        padding-bottom: 40px;
+        @include res(xl, min) {
+            .heading-section {
+                padding-top: 112px;
+            }
+            .form-contact {
+                margin-left: 35px;
+                padding: 40px 60px;
+            }
+        }
+    }
+}
+
+.wrap-section {
+    @include res(xl) {
+        .row {
+            gap: 40px;
+        }
+    }
+}

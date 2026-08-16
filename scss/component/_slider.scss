@@ -1,0 +1,29 @@
+@use "../abstracts/index" as *;
+
+.sw-button {
+    height: 36px;
+    width: 36px;
+    font-size: 20px;
+    border-radius: 50%;
+    background-color: var(--White);
+    color: var(--Text-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include transition3();
+    border-top: 1px solid transparent;
+    &.swiper-button-disabled {
+        background: linear-gradient(
+            123.51deg,
+            rgba(215, 237, 237, 0.1) -61.8%,
+            rgba(204, 235, 235, 0.01) 100%
+        );
+        border-color: rgba(255, 255, 255, 0.1);
+        color: var(--Text-light);
+    }
+    @include res(md, min) {
+        height: 60px;
+        width: 60px;
+        font-size: 32px;
+    }
+}

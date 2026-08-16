@@ -1,0 +1,56 @@
+// settings
+$font-main: "Sora", sans-serif;
+$font-2: "Nasalization", sans-serif;
+$font-3: "Inter", sans-serif;
+$font-4: "Epilogue", sans-serif;
+$fontIcon: "icomoon";
+
+:root {
+    --Black: #000000;
+    --White: #ffffff;
+    --body-text: #666666;
+    --Primary: #45e77b;
+    --Secondary: #266f5d;
+    --Text-light: #fff;
+    --Text-primary: #121212;
+    --Text-secondary: #616161;
+    --Text-muted: #a6a7ae;
+    --Bg-light: #f8f7f4;
+    --Bg-dark: #111111;
+    --Line: #e5e7eb;
+    --Bg-linear: linear-gradient(
+        123.51deg,
+        rgba(204, 235, 235, 0.01) -61.8%,
+        rgba(215, 237, 237, 0.1) 100%
+    );
+    --Bg-linear-2: linear-gradient(
+        123.51deg,
+        rgba(215, 237, 237, 0.1) -61.8%,
+        rgba(204, 235, 235, 0.01) 100%
+    );
+}
+[data-color-primary="color-primary-1"] {
+    --Primary: #45e77b;
+}
+[data-color-primary="color-primary-2"] {
+    --Primary: #f8c736;
+}
+[data-color-primary="color-primary-3"] {
+    --Primary: #f5772e;
+}
+[data-color-primary="color-primary-4"] {
+    --Primary: #2ac6f8;
+}
+[data-color-primary="color-primary-5"] {
+    --Primary: #8dca37;
+}
+[data-color-primary="color-primary-6"] {
+    --Primary: #6c34fa;
+}
+[data-color-primary="color-primary-7"] {
+    --Primary: #f14444;
+}
+[data-color-primary="color-primary-8"] {
+    --Primary: #e14392;
+}
+

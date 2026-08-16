@@ -1,0 +1,302 @@
+@use "../abstracts/index" as *;
+
+.offcanvas-backdrop,
+.overlay-popup {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    position: fixed;
+    background: #000000b3;
+    opacity: 0.7;
+    backdrop-filter: blur(10px);
+    @include transition3();
+    &.show {
+        opacity: 1;
+        visibility: visible;
+        z-index: 998;
+    }
+}
+
+.offcanvas {
+    .close-menu {
+        font-size: 24px;
+        color: var(--Text-light);
+        cursor: pointer;
+        padding: 4px;
+    }
+    .offcanvas-body {
+        &::-webkit-scrollbar {
+            width: 3px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: var(--Primary);
+            border-radius: 999px;
+        }
+    }
+}
+
+.tf-sidebar-menu {
+    max-width: 324px;
+    .offcanvas-header {
+        padding: 24px 15px;
+    }
+    .tag-heading {
+        color: var(--Text-light);
+    }
+    @include transition3();
+    background: var(--Bg-dark);
+    .sidebar-menu-inner {
+        padding: 40px 30px;
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+        @include transition3();
+        &::-webkit-scrollbar {
+            width: 0;
+        }
+    }
+    .sidebar-heading {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        align-items: flex-end;
+    }
+    .sidebar-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        padding-left: 10px;
+        margin-bottom: 80px;
+        a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            justify-content: start;
+            color: var(--Text-light);
+            .icon {
+                font-size: 24px;
+            }
+            &.active,
+            &:hover {
+                color: var(--Primary);
+            }
+        }
+    }
+    .sidebar-social {
+        .heading {
+            margin-bottom: 24px;
+        }
+    }
+}
+
+.popup-show-bar {
+    background-color: transparent;
+    transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transform: translateY(100%);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 1500px;
+    max-width: 100%;
+    z-index: 999;
+    .header-sidebar {
+        background: linear-gradient(
+            123.51deg,
+            rgba(215, 237, 237, 0.1) -61.8%,
+            rgba(204, 235, 235, 0.01) 100%
+        );
+        backdrop-filter: blur(12px);
+        border: 1px solid #ffffff1a;
+    }
+    .nav-menu {
+        .submenu {
+            bottom: 100%;
+        }
+    }
+    &.show {
+        transform: translateY(-20px);
+    }
+}
+
+.popup-menu-mobile {
+    position: absolute;
+    background-color: #121212cc;
+    backdrop-filter: blur(12px);
+    left: 0;
+    right: 0;
+    top: 100%;
+    z-index: 999;
+    margin-top: 30px;
+    opacity: 0;
+    visibility: hidden;
+    @include transition3();
+    .nav-menu {
+        display: block !important;
+    }
+    &.show {
+        opacity: 1;
+        visibility: visible;
+        margin-top: 0;
+    }
+}
+
+.tf-setting-color {
+    max-width: 700px;
+    width: 100% !important;
+    background: var(--Bg-dark);
+
+    .btn-setting-color {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        @include transition3();
+        cursor: pointer;
+        animation: spin 5s infinite linear;
+        &:hover {
+            color: var(--primary);
+        }
+    }
+    .setting-color-option {
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+        padding-top: 50px;
+        padding: 40px 5px;
+        @include transition3();
+        .heading {
+            margin-bottom: 50px;
+        }
+        .title {
+            margin-bottom: 30px;
+        }
+    }
+    .settings-color {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 26px;
+        margin-bottom: 50px;
+        a {
+            display: block;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            position: relative;
+            &:nth-child(1) {
+                background: #45e77b;
+            }
+            &:nth-child(2) {
+                background: #f8c736;
+            }
+            &:nth-child(3) {
+                background: #f5772e;
+            }
+            &:nth-child(4) {
+                background: #2ac6f8;
+            }
+            &:nth-child(5) {
+                background: #8dca37;
+            }
+            &:nth-child(6) {
+                background: #6c34fa;
+            }
+            &:nth-child(7) {
+                background: #f14444;
+            }
+            &:nth-child(8) {
+                background: #e14392;
+            }
+            &::before {
+                position: absolute;
+                content: "";
+                border: 1px solid #fff;
+                border-radius: 50%;
+                width: calc(100% + 10px);
+                height: calc(100% + 10px);
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                opacity: 0;
+                @include transition3();
+            }
+            &.active {
+                &::before {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    .settings-themes {
+        display: flex;
+        gap: 55px 80px;
+        flex-wrap: wrap;
+        a {
+            color: var(--Text-light);
+            &:hover,
+            &.active {
+                color: var(--Primary);
+            }
+        }
+    }
+    @include res(md, min) {
+        .setting-color-option {
+            padding: 70px;
+        }
+        .settings-color {
+            a {
+                width: 44px;
+                height: 44px;
+                &::before {
+                    width: calc(100% + 20px);
+                    height: calc(100% + 20px);
+                }
+            }
+        }
+    }
+    @include res(xl, min) {
+        max-width: 1043px;
+    }
+}
+
+.popup-setting {
+    background-color: var(--Bg-dark);
+    min-height: 314px;
+    .offcanvas-body {
+        padding: 0;
+    }
+    .wrap-features {
+        padding: 0;
+        border: unset;
+        background: unset;
+        padding: 24px 15px;
+    }
+    .close-menu {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        z-index: 3;
+    }
+    @include res(lg, min) {
+        .wrap-features {
+            background-color: unset;
+            padding: 40px 30px 0px 60px;
+        }
+    }
+    @include res(xl, min) {
+        .wrap-features .line {
+            margin-left: 60px;
+            margin-right: 60px;
+        }
+    }
+}

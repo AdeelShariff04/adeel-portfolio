@@ -1,0 +1,141 @@
+@use "../abstracts/index" as *;
+
+.tf-btn {
+    height: 56px;
+    padding: 0 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    line-height: 24px;
+    border-radius: 40px;
+    width: max-content;
+    gap: 8px;
+    i {
+        font-size: 24px;
+    }
+    span {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    &.btn-w-full {
+        width: 100%;
+    }
+    &.style-border {
+        border: 1px solid transparent;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        color: var(--Text-light);
+        @include transition3();
+        .bg_btn {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            border-radius: 40px;
+            &::before {
+                border-top: 1px solid #ffffff1a;
+                content: "";
+                position: absolute;
+                background: var(--Bg-linear-2);
+                inset: 0;
+                @include transition3();
+                opacity: 1;
+                border-radius: inherit;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                border: 1px solid #ffffff1a;
+                border-radius: inherit;
+                background: var(--Bg-linear-2);
+                inset: 0;
+                @include transition3();
+                opacity: 0;
+            }
+        }
+        .effect-shine {
+            background-image: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.3),
+                transparent
+            );
+            left: 150%;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            transform: skew(-20deg);
+            width: 20%;
+        }
+        .title {
+            position: relative;
+            z-index: 2;
+        }
+        &:hover {
+            border-color: #ffffff1a;
+            -webkit-box-shadow: 0 8px 20px 0px rgba(255, 255, 255, 0.15);
+            box-shadow: 0 8px 20px 0px rgba(255, 255, 255, 0.15);
+            -webkit-transform: translate3d(0, -2px, 0);
+            transform: translate3d(0, -2px, 0);
+            .bg_btn {
+                &::before {
+                    opacity: 0;
+                }
+                &::after {
+                    opacity: 1;
+                }
+            }
+            .effect-shine {
+                animation: shine 4.5s cubic-bezier(0.01, 0.56, 1, 1) infinite;
+            }
+        }
+    }
+    &.style-1 {
+        background-color: var(--Primary);
+        color: var(--Text-primary);
+        font-family: $font-3;
+        font-weight: 600;
+    }
+    @include res(md) {
+        padding: 0px 18px;
+        height: 40px;
+    }
+}
+
+.animate-hover-btn {
+    position: relative;
+    overflow: hidden;
+    @include transition3();
+    &:after {
+        background-image: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.7),
+            transparent
+        );
+        content: "";
+        left: 150%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        transform: skew(-20deg);
+        width: 200%;
+    }
+    &:hover {
+        -webkit-box-shadow: 0 8px 30px 0 rgba(0, 0, 0, 0.15);
+        box-shadow: 0 8px 30px 0 rgba(0, 0, 0, 0.15);
+        -webkit-transform: translate3d(0, -2px, 0);
+        transform: translate3d(0, -2px, 0);
+        &:after {
+            animation: shine 0.75s cubic-bezier(0.01, 0.56, 1, 1);
+        }
+    }
+}
+
+@keyframes shine {
+    100% {
+        left: -200%;
+    }
+}

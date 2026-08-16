@@ -1,0 +1,100 @@
+@use "../abstracts/index" as *;
+
+form {
+    position: relative;
+    z-index: 30;
+    textarea,
+    input[type="text"],
+    input[type="password"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="date"],
+    input[type="month"],
+    input[type="time"],
+    input[type="week"],
+    input[type="number"],
+    input[type="email"],
+    input[type="url"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="color"] {
+        outline: 0;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        width: 100%;
+        padding: 12px 0 10px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 28px;
+        background-color: transparent;
+        border: unset;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        color: var(--Text-light);
+        overflow: hidden;
+        margin-bottom: 0;
+        font-family: $font-3;
+        &::placeholder {
+            color: var(--Text-secondary);
+        }
+        &:focus {
+            border-color: var(--Text-light);
+        }
+    }
+    button,
+    input[type="button"],
+    input[type="reset"],
+    input[type="submit"] {
+        background-color: transparent;
+        overflow: hidden;
+        padding: 0;
+    }
+    textarea {
+        padding-top: 12px;
+        height: 92px;
+    }
+}
+
+.form-contact {
+    background: var(--Bg-linear-2);
+    position: relative;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 40px;
+    overflow: hidden;
+    margin-bottom: 44px;
+    overflow: hidden;
+    z-index: 1;
+    .heading-title {
+        flex-wrap: wrap;
+        gap: 8px 12px;
+    }
+    .list-tag {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-bottom: 35px;
+        a {
+            padding: 12px 24px;
+            border-radius: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            background: linear-gradient(
+                123.51deg,
+                rgba(215, 237, 237, 0.1) -61.8%,
+                rgba(204, 235, 235, 0.01) 100%
+            );
+        }
+    }
+    .item-shape {
+        position: absolute;
+        top: -45%;
+        left: -15%;
+        pointer-events: none;
+    }
+    @include res(md) {
+        padding: 28px 15px;
+        .list-tag a {
+            padding: 8px 12px;
+        }
+    }
+}
