@@ -4025,6 +4025,9 @@ ANIMATION AREA CSS
 .portfolio-item:hover .item-shape {
   opacity: 1;
 }
+.portfolio-item .title {
+  color: transparent;
+}
 .portfolio-item:hover .title {
   color: var(--Primary);
 }
